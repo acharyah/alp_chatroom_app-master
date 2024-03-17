@@ -11,7 +11,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 public class Config implements WebSocketMessageBrokerConfigurer {
 
   @Override
-  public void registerStompEndpoints(StompEndpointRegistry registry) {
+  public void registerStompEndpoints(@SuppressWarnings("null") StompEndpointRegistry registry) {
     // to connect with server - /server1
     // to send message - /app/message
     // to subscribe so that we can receive messages - /topic/return-to
@@ -20,7 +20,7 @@ public class Config implements WebSocketMessageBrokerConfigurer {
   }
 
   @Override
-  public void configureMessageBroker(MessageBrokerRegistry registry) {
+  public void configureMessageBroker(@SuppressWarnings("null") MessageBrokerRegistry registry) {
     registry.enableSimpleBroker("/topic");
     registry.setApplicationDestinationPrefixes("/app");
   }
